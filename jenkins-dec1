@@ -10,9 +10,9 @@ node {
    }
    
    stage('Sonar Publish'){
-	   withCredentials([string(credentialsId: 'sonarqube', variable: 'sonarToken')]) {
-        def sonarToken = "sonar.login=${sonarToken}"
-        sh "${mvn} sonar:sonar -D${sonarUrl}  -D${sonarToken}"
+	   withCredentials([string(credentialsId: 'sonarqube', variable: '88480880f2673110defeca9775af837ec886014f')]) {
+        def sonarToken = "sonar.login=${88480880f2673110defeca9775af837ec886014f}"
+        sh "${mvn} sonar:sonar -D${http://3.140.197.255:9000/}  -D${88480880f2673110defeca9775af837ec886014f}"
 	 }
       
    }
@@ -33,7 +33,7 @@ node {
 	   
 	   sshagent (credentials: ['tomcat-dev']) {
 	      sh "scp -o StrictHostKeyChecking=no target/myapp*.war ec2-user@${tomcatDevIp}:${webApps}myapp.war"
-          sh "ssh ec2-user@${172.31.6.154} ${172.31.6.154p}"
+          sh "ssh ec2-user@${172.31.6.154} ${172.31.6.154}"
 		  sh "ssh ec2-user@${172.31.6.154} ${172.31.6.154}"
        }
    }
